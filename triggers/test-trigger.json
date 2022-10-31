@@ -1,0 +1,31 @@
+{
+    "id": "63602527bcf6c1bc2955b456",
+    "name": "test-trigger",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "REPLACE"
+        ],
+        "database": "sample_analytics",
+        "collection": "transactions",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": true,
+        "unordered": false,
+        "skip_catchup_events": true,
+        "tolerate_resume_errors": true
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "resetFunc"
+            }
+        }
+    }
+}
